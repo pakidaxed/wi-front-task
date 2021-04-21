@@ -13,5 +13,9 @@ export default {
 
     setErrors(state, errors) {
         state.errors = errors
+    },
+
+    setCountries(state, countries) {
+        state.allCountries = countries
     }
 }

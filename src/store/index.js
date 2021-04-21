@@ -8,7 +8,8 @@ export default createStore({
     state: {
         allUsers: [],
         currentUser: null,
-        errors: null
+        errors: null,
+        allCountries: []
     },
     getters: getters,
     mutations: mutations,

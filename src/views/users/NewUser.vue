@@ -1,11 +1,25 @@
 <template>
   <h1>NEW USER</h1>
-  <div class="row">
-    <div class="col-3 alert-danger border">AAA</div>
-  </div>
+  <user-form :countries="countries"></user-form>
+
 </template>
 <script>
-export default {}
+import UserForm from "@/components/users/UserForm";
+export default {
+  components: {UserForm},
+  data() {
+    return {
+      countries: [],
+    }
+  },
+  async beforeMount() {
+    await this.$store.dispatch('getCountries')
+    this.countries = this.$store.getters.getCountries
+  },
+  mounted() {
+
+  }
+}
 </script>
 
 <style scoped>

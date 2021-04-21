@@ -9,5 +9,9 @@ export default {
 
     getErrors(state) {
         return state.errors
+    },
+
+    getCountries(state) {
+        return state.allCountries
     }
 }
