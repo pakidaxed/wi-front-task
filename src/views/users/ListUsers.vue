@@ -1,10 +1,10 @@
 <template>
-<h1>EDIT USER</h1>
+<h1>LIST USERS</h1>
+  <router-view></router-view>
 </template>
 
 <script>
 export default {
-  name: "EditUser"
 }
 </script>
 
