@@ -7,6 +7,10 @@ export default {
         state.allUsers = users ?? []
     },
 
+    saveNewUser(state, user) {
+        state.allUsers.push(user)
+    },
+
     resetErrors(state) {
         state.errors = null
     },

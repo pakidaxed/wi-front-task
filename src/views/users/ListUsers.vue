@@ -1,11 +1,51 @@
 <template>
-<h1>LIST USERS</h1>
-  <router-view></router-view>
+  <h1>All users</h1>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action bg-light d-flex justify-content-between align-items-center">
+      <div class="col-2 px-0">
+        <span class="font-weight-bold text-decoration-none text-primary">First name</span>
+      </div>
+      <div class="col-2 px-0">
+        <span class="font-weight-bold text-decoration-none text-primary">Last name</span>
+      </div>
+      <div class="col-3 px-0">
+        <span class="font-weight-bold text-decoration-none text-primary">Country</span>
+      </div>
+      <div class="col-3 px-0">
+        <span class="font-weight-bold text-decoration-none text-primary">Address</span>
+      </div>
+      <div class="col d-flex justify-content-end px-0">
+        <span class="font-weight-bold text-decoration-none text-primary">Actions</span>
+      </div>
+    </li>
+
+    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        v-for="user in $store.state.allUsers" :key="user.id">
+      <div class="col-2 px-0">
+        {{ user.firstName }}
+      </div>
+      <div class="col-2 px-0">
+        {{ user.lastName }}
+      </div>
+      <div class="col-3 px-0">
+        {{ user.country }}
+      </div>
+      <div class="col-3 px-0">
+        {{ user.address }}
+      </div>
+      <div class="col d-flex justify-content-end px-0">
+        <div class="actions d-flex">
+          <button class="btn-sm btn-warning">Edit</button>
+          <button class="btn-sm btn-danger">Delete</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
 
 <style scoped>
