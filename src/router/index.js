@@ -7,7 +7,7 @@ const routes = [
     },
     {
         path: '/users',
-        component: () => import('../views/users/UserPage.vue'),
+        component: () => import('../views/UsersPage.vue'),
         // made children for future links
         children: [
             {
