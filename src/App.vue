@@ -1,14 +1,6 @@
 <template>
   <div class="container">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/users">LIST</router-link>
-      |
-      <router-link to="/users/add">ADD</router-link>
-      |
-      <router-link to="/users/edit/1">EDIT</router-link>
-    </div>
+    <h1 class="py-4">Front-end task for Western investment</h1>
     <router-view/>
   </div>
 </template>
@@ -18,7 +10,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 

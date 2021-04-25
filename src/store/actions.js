@@ -7,6 +7,19 @@ export default {
         commit('saveNewUser', userData)
         router.push('/')
     },
+
+    setCurrentUser({commit}, id) {
+        commit('setCurrentUser', id)
+    },
+
+    unsetCurrentUser({commit}) {
+        commit('unsetCurrentUser')
+    },
+
+    deleteUser({commit}, id) {
+        commit('deleteUser', id)
+        router.push('/')
+    },
     /*
     Getting all data from API
      */
@@ -17,11 +30,4 @@ export default {
                 commit('setCountries', response.data)
             })
     },
-
-
-
-
-
-
-
 }

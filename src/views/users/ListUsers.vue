@@ -1,5 +1,9 @@
 <template>
-  <h1>All users</h1>
+  <h1>All users
+    <router-link to="/users/add">
+      <button class="btn btn-success">Add new user</button>
+    </router-link>
+  </h1>
   <ul class="list-group">
     <li class="list-group-item list-group-item-action bg-light d-flex justify-content-between align-items-center">
       <div class="col-2 px-0">
@@ -20,7 +24,7 @@
     </li>
 
     <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-        v-for="user in $store.state.allUsers" :key="user.id">
+        v-for="user in users" :key="user.id">
       <div class="col-2 px-0">
         {{ user.firstName }}
       </div>
@@ -35,8 +39,8 @@
       </div>
       <div class="col d-flex justify-content-end px-0">
         <div class="actions d-flex">
-          <button class="btn-sm btn-warning">Edit</button>
-          <button class="btn-sm btn-danger">Delete</button>
+          <button @click="$router.push('/users/' + user.id)" class="btn-sm btn-warning">Edit</button>
+          <button class="btn-sm btn-danger" @click="deleteUser(user.id)">Delete</button>
         </div>
       </div>
     </li>
@@ -45,9 +49,19 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      users: []
+    }
+  },
+  beforeMount() {
+    this.users = this.$store.getters.getAllUsers
+  },
+  methods: {
+    deleteUser(id) {
+      this.$store.dispatch('deleteUser', id)
+    }
+  }
+}
 </script>
-
-<style scoped>
-
-</style>

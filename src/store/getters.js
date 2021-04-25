@@ -7,10 +7,6 @@ export default {
         return state.currentUser
     },
 
-    getErrors(state) {
-        return state.errors
-    },
-
     getCountries(state) {
         return state.allCountries
     }

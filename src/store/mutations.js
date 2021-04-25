@@ -1,22 +1,18 @@
 export default {
-    setCurrentUser(state, data) {
-        state.currentUser = data
+    setCurrentUser(state, id) {
+        state.currentUser = state.allUsers.find(x => x.id === id)
     },
 
-    setAllUsers(state, users) {
-        state.allUsers = users ?? []
+    unsetCurrentUser(state) {
+        state.currentUser = null
+    },
+
+    deleteUser(state, id) {
+        state.allUsers = state.allUsers.filter(x => x.id !== id)
     },
 
     saveNewUser(state, user) {
-        state.allUsers.push(user)
-    },
-
-    resetErrors(state) {
-        state.errors = null
-    },
-
-    setErrors(state, errors) {
-        state.errors = errors
+        state.allUsers.unshift(user)
     },
 
     setCountries(state, countries) {
